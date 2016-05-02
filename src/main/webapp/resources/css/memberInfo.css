@@ -1,0 +1,144 @@
+@CHARSET "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+ul li{
+	margin:0;
+	padding:0;
+}
+.wrap{
+	position:relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+.wrap > .head{
+	position:relative;
+	width: 800px;
+	height: 198px;
+	border-bottom:2px solid #1a75bc;
+	margin: 0 auto; 
+	padding:30px;	
+}
+.wrap > .head > .logo{
+	position:relative;
+	width: 198px;
+	height: 198px;
+	margin: 0 auto; 	
+}
+
+
+.wrap .sideNav{
+	margin-left:-69px;
+	margin-top:-2px;
+	padding:0;
+	float:left;
+}
+
+
+.wrap .sideNav ul li{
+	width:139px;
+	height:138px;
+}
+.wrap > .content{
+	position:relative;
+	width:930px;
+	height:100%;
+	margin:0 auto;
+	float:right;
+}
+
+.contentWrapTable{
+	width:930px;
+	position: relative;
+}
+.contentWrapTable td{
+	width:465px;
+}
+
+.memberInfoTable{
+	width: 400px;
+	font-size:18px;
+	position:relative;
+	margin: 30px auto;
+}
+.memberInfoTable tr td:FIRST-CHILD{
+	width: 150px;
+	border-right:1.5px solid #878788;
+}
+
+.moneyWrap ul{
+	margin:0; padding:0; list-style: none;
+}
+
+.moneyWrap ul li{
+	float:left;
+	text-align:center;
+	width:111px;
+}
+.money{
+	clear: both;
+	
+	
+}
+.money li{
+	height:111px;
+	margin-top:20px;
+	line-height:111px;
+	background:url(../images/home/moneyBg.png);
+}
+
+.list{
+	width:800px;
+	margin:0 auto;
+	table-layout: fixed;
+	border:1px solid #878788;
+	
+}
+.list td{
+	border-top:1px solid #878788;	
+}
+.listTitle{
+	text-align: center;
+	
+}
+.listTitle td{
+	border:0;
+	margin-bottom:2px; 
+}
+.listTitle td:FIRST-CHILD{
+	width:150px;
+	border-right:1px solid #878788;
+}
+.listTitle td:LAST-CHILD{
+	width:100px;
+}
+.listTitle td:nth-child(2){
+	width:550px;
+}
+.listTitle td:LAST-CHILD select{
+	width:100px;
+}
+
+.ttt{
+	text-align: center
+}
+.goChargeBtn,.goPayBtn{
+	border-radius:10px 10px;
+	width:100px;
+	height:50px;
+	background: blue;
+	color:#fff;
+	cursor: pointer;
+	font-weight: bold;
+	font-size:18px;
+	border:0;
+	
+}

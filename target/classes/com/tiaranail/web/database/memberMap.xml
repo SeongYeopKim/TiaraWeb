@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	
+	<insert id="join" parameterType="com.tiaranail.web.domain.Account">
+		INSERT INTO
+			account
+		(name,birth,phone,nic_name,pw,id)
+		VALUES
+		(#{name},#{birth},#{phone},#{nic_name},sha(#{pw}),#{id});
+	
+	
+	</insert>
+	
+	<select id="masterlogin" resultType="com.tiaranail.web.domain.Account" parameterType="com.tiaranail.web.domain.Account">
+		SELECT *
+		FROM account
+		WHERE id=#{id} and pw=sha(#{pw}) and master = "a"
+	</select>
+	
+	
+	<select id="list_name" resultType="com.tiaranail.web.domain.Account" parameterType="com.tiaranail.web.domain.Account">
+		SELECT name,birth,phone,nic_name,id
+		FROM account 
+		WHERE name like concat('%',#{name},'%')
+	</select>
+	
+	<select id="list_id" resultType="com.tiaranail.web.domain.Account" parameterType="com.tiaranail.web.domain.Account">
+		SELECT name,birth,phone,nic_name,id
+		FROM account 
+		WHERE id like concat('%',#{id},'%')
+	</select>
+	
+	<select id="list_phone" resultType="com.tiaranail.web.domain.Account" parameterType="com.tiaranail.web.domain.Account">
+		SELECT name,birth,phone,nic_name,id
+		FROM account 
+		WHERE phone like concat('%',#{phone},'%')
+	</select>
+	
+	<select id="list_all" resultType="com.tiaranail.web.domain.Account">
+		SELECT name,birth,phone,nic_name,id
+		FROM account
+	</select>
+	
+	<select id="app_login" resultType="com.tiaranail.web.domain.Account">
+		SELECT *
+		FROM account
+		WHERE id=#{id} and pw=sha(#{pw})
+	</select>
+	
+		<!-- 아이디 중복검사 (아이디의 갯수를 리턴) -->
+	<select id="duplicateCheck" parameterType="String" resultType="String">
+		SELECT 
+			count(*)
+		FROM 
+			account
+		WHERE 
+			id=#{id}
+	</select>
+	
+	<select id="find_gcm_key" parameterType ="String" resultType="String">
+	    SELECT mykey
+		FROM account
+		WHERE id=#{id}
+	</select>
+	
+	<select id="all_gcm_key" resultType="String">
+		SELECT 	mykey
+		FROM 	account
+		WHERE 	length(mykey)>0 
+	
+	</select>
+	<update id="insertKey" parameterType="java.util.HashMap">
+		UPDATE account
+		SET mykey= #{key}
+		WHERE id=#{id}
+	</update>
+
+	
+	<select id="find_birth" parameterType="String" resultType="com.tiaranail.web.domain.Account">
+		SELECT 	name,birth,phone,nic_name,id,mykey
+		FROM 	account
+		WHERE 	birth=#{birth}
+	</select>
+	<!-- 키가 없는 한 사람 폰번 -->
+	<select id="find_phone" parameterType ="String" resultType="String">
+	    SELECT phone
+		FROM account
+		WHERE id=#{id} and length(phone)>0
+	</select>
+	<!-- 키가 업슨 사람들 목록 -->
+	<select id="find_no_key_phone" resultType="String">
+		SELECT 	phone
+		FROM 	account
+		WHERE 	mykey is null and length(phone)>0
+	
+	</select>
+	<select id="find_phonee" resultType="String">
+		SELECT 	phone
+		FROM 	account
+		WHERE 	length(phone)>0
+	
+	</select>
+	
+	<update id="updateInpo" parameterType="java.util.HashMap">
+		UPDATE account
+		SET mykey= #{id}
+		WHERE name=#{name} and pw=#{pw} and birth=#{birth} and phone=#{phone} 
+	</update>
+	
+	
+</mapper>

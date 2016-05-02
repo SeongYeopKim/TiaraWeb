@@ -1,0 +1,43 @@
+@CHARSET "UTF-8";
+
+.contentWrap .content .boardWrap{
+	position:relative;
+	width: 805px;
+	background: #fde4d8;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+.contentWrap .content .boardWrap table{
+	position: relative;
+	margin:0 auto;
+	border:2px solid #fff;
+	width: 760px;
+}
+.contentWrap .content .boardWrap table .boardTableTitle td{
+	height:40px;
+	
+}
+.contentWrap .content .boardWrap table tr td:FIRST-CHILD{
+	width:70px;
+	text-align: center;
+}
+.contentWrap .content .boardWrap table tr td:NTH-CHILD(2){
+	width: 385px;
+}
+.contentWrap .content .boardWrap table tr td:NTH-CHILD(3){
+	width: 120px;
+}
+.contentWrap .content .boardWrap table tr td:LAST-CHILD{
+	width: 110px;
+}
+.contentWrap .content .boardWrap table tr td{
+	border-bottom:1px dashed #f59cae;
+	height: 40px;
+}
+.contentWrap .content .boardWrap table .boardNotice td{
+	font-weight: bold;
+	color:#6b278a;
+}
+.contentWrap .content .boardWrap table controllTd{
+	height:70px;
+}

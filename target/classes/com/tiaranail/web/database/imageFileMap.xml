@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="image">
+	
+	<insert id="insertFile" parameterType="com.tiaranail.web.domain.ImageFile">
+		INSERT INTO
+			file
+		(file_title,file_content,file_date,file_url)
+		VALUES
+		(#{file_title},#{file_content},(SELECT NOW()),#{file_url})
+		</insert>
+		
+		
+		<select id="ViewImage" resultType="com.tiaranail.web.domain.ImageFile" parameterType="java.util.Map">
+		SELECT * 
+		FROM file
+		</select>
+		
+	
+</mapper>

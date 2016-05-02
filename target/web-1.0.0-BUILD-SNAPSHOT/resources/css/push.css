@@ -1,0 +1,130 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul li {
+	margin: 0;
+	padding: 0;
+}
+
+.wrap {
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.wrap>.head {
+	position: relative;
+	width: 800px;
+	height: 198px;
+	border-bottom: 2px solid #1a75bc;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+.wrap>.head>.logo {
+	position: relative;
+	width: 198px;
+	height: 198px;
+	margin: 0 auto;
+}
+
+.wrap .sideNav {
+	margin-left: -69px;
+	margin-top: -2px;
+	padding: 0;
+	float: left;
+}
+
+.wrap .sideNav ul li {
+	width: 139px;
+	height: 138px;
+}
+
+.wrap>.content {
+	position: relative;
+	width: 540px;
+	height: 100%;
+	margin: 0 auto;
+}
+
+.wrap>.content>.title {
+	width: 540px;
+	text-align: center;
+	font-size: 30px;
+	margin-top: 50px;
+	color: rgb(14, 118, 188);
+}
+
+.msgBody {
+	width: 400px;
+	height: 920px;
+	resize: none;
+	font-size: 20px;
+}
+
+.sendBtn {
+	width: 75px;
+	height: 40px;
+	background: url(../images/home/sendBtn.png);
+	position: absolute;
+	top: 789px;
+	right: 16px;
+	border: 0;
+	cursor: pointer;
+}
+
+.groupWrap {
+	font-size: 13px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+.phone {
+	width: 540px;
+	height: 920px;
+	background: url(../images/home/phone.png);
+	position: relative;
+}
+
+.phone .phoneText {
+	width: 415px;
+	height: 161px;
+	padding:5px;
+	position: relative;
+	top: 751px;
+	left: 15px;
+	overflow-y: scroll;
+	background: none;
+	color: #fff;
+	font-size: 20px;
+}
+
+.byteView {
+	text-align: right;
+	font-size: 15px;
+	top:760px;
+	right:20px;
+	position: absolute;
+	color:white;
+	font-weight: lighter;
+}
+.phoneTitle{
+	position:absolute;
+	background:#000;
+	text-align: left;
+	width:400px;
+	color: #fff;
+	font-size:25px;
+	top:90px;
+	left:20px;
+}

@@ -1,0 +1,98 @@
+@CHARSET "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+ul li{
+	margin:0;
+	padding:0;
+}
+.wrap{
+	position:relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+.wrap > .head{
+	position:relative;
+	width: 800px;
+	height: 198px;
+	border-bottom:2px solid #1a75bc;
+	margin: 0 auto; 
+	padding:30px;	
+}
+.wrap > .head > .logo{
+	position:relative;
+	width: 198px;
+	height: 198px;
+	margin: 0 auto; 	
+}
+
+
+.wrap .sideNav{
+	margin-left:-69px;
+	margin-top:-2px;
+	padding:0;
+	float:left;
+}
+
+
+.wrap .sideNav ul li{
+	width:139px;
+	height:138px;
+}
+.wrap > .content{
+	position:relative;
+	width:930px;
+	height:100%;
+	margin:0 auto;
+	float:right;
+}
+
+
+.content .wrapTable{
+	width: 920px;
+	padding:5px;
+	
+}
+.content table .tabBtn{
+	width: 50%;
+	height: 50px;
+	cursor:pointer;
+	color:#404041;
+	font-size:25px;
+	text-align: center;
+	line-height: 50px;
+	
+}
+.content table .tabBtn:FIRST-CHILD{
+	border-right: 1px solid #e7e7e7;
+}
+.tabContent1, .tabContent2{
+	width:830px;
+	margin:40px;
+}
+.tabContent2 table{
+	width:700px;
+	margin:100px auto;
+}
+.tabContent1 table{
+	width:700px;
+	margin:100px auto;
+}
+.tabContent1 table td, .tabContent2 table td{
+	border-bottom: 1px solid #e7e7e7;
+}
+.tabContent2 table td:FIRST-CHILD{
+	width:50px; 
+}
+
+textarea {
+	resize:none;
+}

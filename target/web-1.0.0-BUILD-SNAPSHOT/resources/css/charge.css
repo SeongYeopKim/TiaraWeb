@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+ul li{
+	margin:0;
+	padding:0;
+}
+.wrap{
+	position:relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+.wrap > .head{
+	position:relative;
+	width: 800px;
+	height: 198px;
+	border-bottom:2px solid #1a75bc;
+	margin: 0 auto; 
+	padding:30px;	
+}
+.wrap > .head > .logo{
+	position:relative;
+	width: 198px;
+	height: 198px;
+	margin: 0 auto; 	
+}
+
+
+.wrap .sideNav{
+	margin-left:-69px;
+	margin-top:-2px;
+	padding:0;
+	float:left;
+}
+
+
+.wrap .sideNav ul li{
+	width:139px;
+	height:138px;
+}
+.wrap > .content{
+	position:relative;
+	width:860px;
+	height:100%;
+	margin:0 auto;
+}
+
+.wrap > .content >table{
+	width:400px;
+	margin:100px auto;
+	table-layout: fixed;
+}
+.wrap   .content  table td{
+	width:100px;
+	text-align: center;
+} 
+.wrap   .content  table .total_Money{
+	width:200px;
+	font-size: 18px;
+}
+
+#plus, #minus{
+	background: #0e76bc;
+	color:#fff;
+	font-size:30px;
+	width:100px;
+	height:100px;
+	cursor: pointer
+}
+.sub{
+	background: #0e76bc;
+	color:#fff;
+	font-size:30px;
+	width:100px;
+	height:50px;
+	cursor: pointer
+}
+

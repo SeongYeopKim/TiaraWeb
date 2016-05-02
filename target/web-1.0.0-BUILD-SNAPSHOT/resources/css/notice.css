@@ -1,0 +1,295 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+ul li {
+	margin: 0;
+	padding: 0;
+}
+
+.wrap {
+	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.wrap>.head {
+	position: relative;
+	width: 800px;
+	height: 198px;
+	border-bottom: 2px solid #1a75bc;
+	margin: 0 auto;
+	padding: 30px;
+}
+
+.wrap>.head>.logo {
+	position: relative;
+	width: 198px;
+	height: 198px;
+	margin: 0 auto;
+}
+
+.wrap .sideNav {
+	margin-left: -69px;
+	margin-top: -2px;
+	padding: 0;
+	float: left;
+}
+
+.wrap .sideNav ul li {
+	width: 139px;
+	height: 138px;
+}
+
+.wrap>.content {
+	position: relative;
+	width: 930px;
+	height: 100%;
+	margin: 0 auto;
+	float: right;
+}
+
+.content .wrapTable {
+	width: 920px;
+	padding: 5px;
+}
+
+.content table .tabBtn {
+	width: 50%;
+	height: 50px;
+	cursor: pointer;
+	color: #404041;
+	font-size: 25px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.content table .tabBtn:FIRST-CHILD {
+	border-right: 1px solid #e7e7e7;
+}
+
+.tabContent1, .tabContent2 {
+	width: 830px;
+	margin: 40px;
+}
+
+.tabContent1 table {
+	width: 800px;
+	margin: 100px auto;
+	table-layout: fixed;
+}
+
+.tabContent2 table {
+	width: 800px;
+	margin: 100px auto;
+}
+
+.tabContent1 table .tab1Title th {
+	height: 50px;
+	border: 1px solid #e7e7e7;
+}
+
+.tabContent1 table .tab1Title th:FIRST-CHILD {
+	width: 70px;
+}
+
+.tabContent1 table .tab1Title th:nth-child(2) {
+	width: 150px;
+}
+
+.tabContent1 table .tab1Title th:nth-child(3) {
+	width: 530px;
+}
+
+.tabContent1 table .tab1Title th:nth-child(4) {
+	width: 150px;
+}
+
+.tabContent1 table tr td:nth-child(4) {
+	font-size: 10px;
+}
+
+.tabContent1 table td {
+	height: 30px;
+	border-left: 1px solid #e7e7e7;
+	border-top: 1px solid #e7e7e7;
+	border-right: 1px solid #e7e7e7;
+}
+
+.tabContent1 table td input {
+	width: 30px;
+	height: 20px;
+	color: #fff;
+	cursor: pointer;
+	background: #0e76bc;
+	border: 0;
+}
+
+.tabContent1 table tr:LAST-CHILD td {
+	border-left: 1px solid #e7e7e7;
+	border-top: 1px solid #e7e7e7;
+	border-right: 1px solid #e7e7e7;
+	border-bottom: 1px solid #e7e7e7;
+}
+
+#idcheck {
+	cursor: pointer;
+	width: 50px;
+	height: 25px;
+	background: #0e76bc;
+	color: #fff;
+	border: 0;
+}
+
+.joinsubmit {
+	cursor: pointer;
+	width: 50px;
+	height: 25px;
+	background: #0e76bc;
+	color: #fff;
+	border: 0;
+}
+
+.tabContent2 {
+	display: none;
+}
+
+.tabContent2 .btn {
+	width: 50px;
+	cursor: pointer;
+	height: 25px;
+	background: #0e76bc;
+	font-size: 17px;
+	color: #fff;
+	border: 0;
+}
+
+.memberInfo {
+	font-size: 15px;
+	height: 50px;
+	float: left;
+}
+
+.memberInfo td {
+	height: 20px;
+	margin-bottom: 5px;
+}
+
+.memberInfo tr td:FIRST-CHILD {
+	border-right: 1px solid #e7e7e7;
+}
+
+.reserve, .charge {
+	width: 111px;
+	height: 111px;
+	background: url(../images/home/moneyBg.png);
+	background-repeat: no-repeat;
+}
+
+.moneyTable {
+	position: relative;
+	float: right;
+	margin-right: 130px;
+}
+
+.moneyTable ul li {
+	float: left;
+}
+
+.moneyTable ul {
+	clear: both;
+}
+
+.moneyTitle li {
+	width: 111px;
+	margin-top: 20px;
+	text-align: center;
+	margin-left: 50px;
+}
+
+.money li {
+	width: 111px;
+	height: 111px;
+	margin-top: 20px;
+	margin-left: 50px;
+	line-height: 111px;
+	text-align: center;
+}
+
+.list {
+	width: 780px;
+	margin: 50px auto;
+	border: 1px solid #e7e7e7;
+}
+
+.list tr td {
+	border: 1px solid #e7e7e7;
+}
+
+.list .listTitle td {
+	text-align: center;
+}
+
+.list .listTitle td:FIRST-CHILD {
+	width: 100px;
+	height: 40px;
+	line-height: 40px
+}
+
+.list .listTitle td:last-child {
+	width: 50px;
+}
+
+.list .listTitle td:last-child input {
+	width: 50px;
+}
+
+.list2 tr td:FIRST-CHILD {
+	width: 200px;
+}
+
+.list2 tr td:LAST-CHILD {
+	width: 200px;
+}
+
+.searchBox {
+	width: 100%;
+	height: 100%;
+}
+
+.search {
+	width: 400px;
+	margin: 0 auto;
+}
+
+.search tr td {
+	height: 30px;
+	text-align: center;
+}
+
+.search tr td:FIRST-CHILD {
+	width: 100px;
+}
+
+.search tr td:LAST-CHILD {
+	width: 150px;
+}
+
+.submit {
+	width: 87px;
+	height: 37px;
+	background: url(../images/home/search.png);
+}
+
+.search tr td .submitBox {
+	height: 100px;
+}

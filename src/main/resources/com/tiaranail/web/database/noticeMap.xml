@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+	
+	
+	
+	<select id="showNotice" resultType="com.tiaranail.web.domain.Notice">
+		SELECT * 
+		FROM notice 
+		where state="o"
+	</select>
+	
+	<insert id="UploadNotice" parameterType="com.tiaranail.web.domain.Notice">
+		INSERT INTO
+			notice
+		(title,content,date,state)
+		VALUES
+		(#{title},#{content},(SELECT NOW()),"o");
+	
+	
+	</insert>
+	<select id="delete" parameterType="String">
+		UPDATE notice 
+		set state="x"
+		where notice_num=#{num}
+	</select>
+	
+</mapper>

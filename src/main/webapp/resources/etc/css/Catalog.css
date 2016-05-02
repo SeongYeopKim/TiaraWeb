@@ -1,0 +1,76 @@
+body{
+    max-height: 1024px;
+    min-height: 770px;
+    width:100%;
+    text-align:center; 
+}
+#Con{
+    margin: 0 auto;
+    width: 750px;
+    text-align:left;
+}
+#C1{
+    width: 250px;
+    height: 250px;
+    border-radius: 50% 50%;
+    background-color: white;
+    color: grey;
+    float: left;
+}
+#C2{
+    width: 250px;
+    height: 250px;
+    border-radius: 50% 50%;
+    background-color: grey;
+    float: right;
+}
+    
+#Calculation{
+    width: 250px;
+    height: 250px;
+    border-radius: 50% 50%;
+    background-color: white;
+    color: grey;
+    float: left;
+    
+}
+#Accounts{
+    width: 250px;
+    height: 250px;
+    border-radius: 50% 50%;
+    background-color: grey;
+    float: left;
+}
+#MemberEntry{
+    width: 250px;
+    height: 250px;
+    border-radius: 50% 50%;
+    background-color: white;
+    color: grey;
+    float: left;
+}
+#MemberList{
+    width: 250px;
+    height: 250px;
+    border-radius: 50% 50%;
+    background-color: grey;
+    color: white;
+    float: left;
+}
+#Info{
+    width: 250px;
+    height: 250px;
+    border-radius: 50% 50%;
+    background-color: white;
+    color : grey;
+    float: left;
+}
+#Upload{
+     width: 250px;
+    height: 250px;
+    border-radius: 50% 50%;
+    background-color: grey;
+    color: white;
+    float: left;
+}
+            

@@ -1,0 +1,191 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<link href="resources/css/side.css" rel="stylesheet">
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+<script>
+	function tabControll(tab) {
+		if (tab == 1) {
+			$(".tabContent1").css("display", "block");
+			$(".tabContent2").css("display", "none");
+			$(".tabBtn:eq(0)").css("color", "#0e76bc");
+		} else {
+			$(".tabContent1").css("display", "none");
+			$(".tabContent2").css("display", "block");
+			$(".tabBtn:eq(1)").css("color", "#0e76bc");
+		}
+
+	}
+
+	function urlCheck() {
+		var loca = window.location + "";
+		var locaSplit = new Array();
+		locaSplit = loca.split('/');
+
+		var locaSplitLength = locaSplit.length;
+		if (locaSplit[locaSplitLength - 1] == "listJson.tiara"
+				|| locaSplit[locaSplitLength - 1] == "list.tiara") {
+			tabControll(1);
+		} else {
+			tabControll(2);
+		}
+	}
+
+	$(function(e) {
+		urlCheck();
+		var kk = new Array();
+		var manLength = $(".user").length;
+		for(i=0; i<manLength; i++){ 
+			var tval =$(".nameValue:eq("+i+")").val();
+			tval = encodeURI(tval);
+			$(".nameValue:eq("+i+")").val(tval);
+		}
+		$(".tabBtn").click(function(e) {
+			var tindex = $(this).index() + 1;
+			if (tindex == 1) {
+				window.location.href = "list.tiara";
+			} else {
+				window.location.href = "signUp.tiara";
+			}
+		});
+		$(".idText").css("cursor","pointer").click(function(e){
+			var tindex = $(this).parent().parent().index()-1;
+			$(".formText:eq("+tindex+")").submit();
+		})
+		
+
+		$("#idcheck")
+				.click(
+						function(e) {
+
+							var thisID = $("#id").val();
+							window
+									.open("nickNameCheck.tiara?id=" + thisID,
+											'아이디 중복체크',
+											'scrollbars=no,toolbar=no,resizable=no,width=300,height=200,left=0,top=0');
+						})
+	});
+</script>
+</head>
+<body>
+	<div class="wrap">
+		<div class="head">
+			<div class="logo">
+				<a href="home.tiara"><img src="resources/images/home/logo.png"></a>
+			</div>
+		</div>
+		<div class="sideNav">
+			<ul>
+				<li><a href="home.tiara"><img
+						src="resources/images/home/homeBtn.png"></a></li>
+				<li><a href="list.tiara"><img
+						src="resources/images/home/memberBtn.png"></a></li>
+				<li><a href="noticeView.tiara"><img
+						src="resources/images/home/noticeBtn.png"></a></li>
+			</ul>
+		</div>
+		<div class="content">
+			<table class="wrapTable" border="0" cellspacing="0" cellpadding="0">
+				<tr>
+					<td class="tabBtn">회원조회</td>
+					<td class="tabBtn">회원등록</td>
+				</tr>
+				<tr>
+					<td colspan="2" class="tabTd">
+						<div class="tabContent1">
+						<form action="listJson.tiara" method="post">
+								<table class="search">
+									<tr>
+										<td><select name="type">
+												<option value="id">아이디</option>
+												<option value="name">이름</option>
+												<option value="phone">전화번호</option>
+										</select></td>
+										<td><input type="text" name="value" class="searchBox"></td>
+									</tr>
+									<tr>
+										<td colspan="2" class="submitBox" style="height: 100px"><input
+											type="submit" class="submit" value=""></td>
+									</tr>
+								</table>
+							</form>
+							<table class="list list2" cellspacing="0" cellpadding="0">
+								<tr class="listTitle">
+									<td>아이디</td>
+									<td>이름</td>
+									<td>생일</td>
+									<td colspan="2">전화번호</td>
+								</tr>
+								<c:forEach var="account" items="${requestScope.account }">
+									<tr class="user">
+
+										<td><form action="memberInfo.tiara" method="get" class="formText">
+											<input type="hidden" name="id" class="idValue" value="${account.id }">
+											<input type="hidden" name="name" class="nameValue" value="${account.name }">
+											<input type="hidden" name="birth" value="${account.birth }">
+											<input type="hidden" name="phone" value="${account.phone }">
+											<input type="hidden" name="nic_name" value="${account.nic_name }">
+											<input type="hidden" name="type" value="0">
+										${account.id }</form></td>
+
+										<td>${account.name }</td>
+
+										<td>${account.birth }</td>
+
+										<td>${account.phone }<input type="button" value="정보보기" class="idText" ></td>
+									</tr>
+								</c:forEach>
+							</table>
+							
+						</div>
+						<div class="tabContent2">
+							<form action="signUp.tiara" method="post">
+								<table cellspacing="20">
+									<tr>
+										<td>아이디</td>
+										<td><input type="text" name="id" id="id"></td>
+										<td><input type="button" value="중복확인" id="idcheck"></td>
+									</tr>
+									<tr>
+										<td>비밀번호</td>
+										<td><input type="password" name="pw"></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>비밀번호 확인</td>
+										<td><input type="password" class="passCheck"></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>이름</td>
+										<td><input type="text" name="name"></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>생일</td>
+										<td><input type="text" name="birth_mon"></td>
+										<td><input type="text" name="birth_day"></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td>전화번호</td>
+										<td><input type="text" name="phone"></td>
+										<td></td>
+									</tr>
+									<tr>
+										<td colspan="3" style="text-align: center"><input
+											type="submit" value="전송" class="joinsubmit"></td>
+									</tr>
+								</table>
+							</form>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

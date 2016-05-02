@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+.wrap{
+	position:relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+.wrap > .head{
+	position:relative;
+	width: 800px;
+	height: 198px;
+	border-bottom:2px solid #1a75bc;
+	margin: 0 auto; 
+	padding:30px;	
+}
+.wrap > .head{
+	position:relative;
+	width: 800px;
+	height: 198px;
+	margin: 0 auto; 
+}
+.wrap > .head > .loginTitle{
+	position:relative;
+	width: 213px;
+	height: 58px;
+	margin-top: 30px; 	
+}
+.wrap > .head > .logo{
+	position:relative;
+	width: 198px;
+	height: 198px;
+	margin: 0 auto; 	
+}
+
+.wrap > .content{
+	
+	
+}
+.wrap > .content > .loginBox{
+	position: relative;
+	width: 650px;
+	margin: 200px auto;
+	
+}
+.wrap > .content > .loginBox > table > tr > td{
+	margin:5px;
+	
+}
+.inputId, .inputPass{
+	width:307px;
+	height:37px;
+	margin:0; padding:0;
+	border:0;
+	background:url("../images/login/inputBg.png");
+	font-size: 18px;
+	padding:2px; 
+}
+.loginBtn{
+	width: 227px;
+	height: 101px;
+	background: url("../images/login/loginBtn.png");
+	
+}

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="money">
+
+	<insert id="insert" parameterType="com.tiaranail.web.domain.First_Pay">
+		INSERT INTO
+		first_pay
+		(id,total_money,left_money,fp_date,fp_rate)
+		VALUES
+		(#{id},#{total_money},#{left_money},(SELECT NOW()),#{fp_rate});
+
+
+	</insert>
+	<select id="showFirstPayList" parameterType="String"
+		resultType="com.tiaranail.web.domain.First_Pay">
+		SELECT *
+		FROM first_pay
+		WHERE id=#{id}
+	</select>
+
+	<select id="showAllFirstPayList" resultType="com.tiaranail.web.domain.First_Pay">
+		SELECT *
+		FROM first_pay
+
+	</select>
+
+	<select id="countFirstPay" parameterType="String" resultType="int">
+		SELECT count(*)
+		FROM first_pay
+		WHERE left_money>0 and id=#{id}
+	</select>
+	<select id="SelectId" parameterType="String"
+		resultType="com.tiaranail.web.domain.First_Pay">  <!-- pay방법1. -->
+		SELECT *
+		FROM first_pay
+		WHERE left_money>0 and id=#{id}
+		limit 1
+	</select>
+	<update id="useMoney" parameterType="com.tiaranail.web.domain.First_Pay">
+		UPDATE first_pay
+		SET left_money= #{left_money}
+		WHERE fp_num=#{fp_num}
+	</update>
+
+	<insert id="writeList" parameterType="com.tiaranail.web.domain.PayList">
+		INSERT INTO
+		paylist
+		(pay_id,pay_date,pay_money,pay_type,rate,left_money,service)
+		VALUES
+		(#{pay_id},(SELECT
+		NOW()),#{pay_money},#{pay_type},#{rate},#{left_money},#{service});
+	</insert>
+	<!-- pay 방법2 -->
+	<select id="SelectID_Test" parameterType="String"
+		resultType="com.tiaranail.web.domain.First_Pay">  <!-- pay방법1. -->
+		SELECT *
+		FROM first_pay
+		WHERE left_money>0 and id=#{id}
+	</select>
+
+	<select id="date_find" parameterType="java.util.HashMap"
+		resultType="com.tiaranail.web.domain.PayList">
+		SELECT *
+		FROM paylist
+		where pay_date between #{start_date} and #{end_date}
+		ORDER BY pay_date ASC;
+		
+	</select>
+
+	<select id="date_find_id" parameterType="java.util.HashMap"
+		resultType="com.tiaranail.web.domain.PayList">
+		SELECT *
+		FROM paylist
+		where pay_date between #{start_date} and #{end_date} and pay_id= #{id}
+	</select>
+	
+
+	<select id="show_pay_list" parameterType="String"
+		resultType="com.tiaranail.web.domain.PayList">
+		SELECT *
+		FROM paylist
+		where pay_id=#{id}  Order By pay_num DESC
+	</select>
+	<select id="show_all_pay_list" parameterType="String"
+		resultType="com.tiaranail.web.domain.PayList">
+		SELECT *
+		FROM paylist
+	</select>
+	<!-- 병주추가 --> 
+	<select id="show_all_pay_type" parameterType="java.util.HashMap"
+		resultType="com.tiaranail.web.domain.PayList">
+		SELECT *
+		FROM paylist
+		WHERE pay_type=#{pay_type} AND pay_date between #{start_date} and #{end_date} and pay_id= #{id}
+	</select>
+	<!-- 병주추가 끝 -->
+	<select id="find_saved_money" parameterType="String"
+		resultType="com.tiaranail.web.domain.SavedMoney">
+		SELECT *
+		FROM sm_money
+		where sm_id=#{sm_id}
+	</select>
+	
+	<update id="add_saved_money" parameterType="com.tiaranail.web.domain.SavedMoney">
+		UPDATE sm_money
+		SET sm_sum= #{sm_sum}
+		WHERE sm_id=#{sm_id}
+	</update>
+	
+	<insert id="insert_saved_money" parameterType="com.tiaranail.web.domain.SavedMoney">
+		INSERT INTO
+		sm_money
+		(sm_id,sm_sum,sm_new_money,sm_date)
+		VALUES
+		(#{sm_id},#{sm_sum},#{sm_new_money},(SELECT NOW()));
+	</insert>
+
+
+
+</mapper>

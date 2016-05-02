@@ -1,0 +1,52 @@
+@CHARSET "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+.wrap{
+	position:relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+.wrap > .head{
+	position:relative;
+	width: 800px;
+	height: 198px;
+	border-bottom:2px solid #1a75bc;
+	margin: 0 auto; 
+	padding:30px;	
+}
+.wrap > .head > .logo{
+	position:relative;
+	width: 198px;
+	height: 198px;
+	margin: 0 auto; 	
+}
+
+.wrap > .content{
+	position:relative;
+	width:800px;
+	margin:0 auto;
+	
+}
+.wrap > .content> ul{
+	position:relative;
+	width:450px;
+	margin:100px auto;
+	padding-bottom: 300px;
+}
+.wrap > .content >ul> li{
+	float:left;
+	margin-left:150px;
+	cursor: pointer;
+}
+.wrap > .content >ul> li:FIRST-CHILD{
+	margin-left:0px;
+}

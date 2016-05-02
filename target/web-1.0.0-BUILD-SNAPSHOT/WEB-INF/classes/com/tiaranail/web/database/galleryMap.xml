@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="gallery">
+
+	<insert id="addGallery" parameterType="com.tiaranail.web.domain.Gallery">
+		INSERT INTO
+		gallery
+		(gtitle, gbody, gthumbnail, gfilename, gfileurl)
+		VALUES
+		(#{gTitle},#{gBody},#{gThumbNail}, #{gFileName},#{gFileUrl})
+	</insert>
+
+
+	<select id="getTotalList" resultType="com.tiaranail.web.domain.Gallery">
+		SELECT * FROM tiara.gallery Order By gNum DESC;
+	</select>
+	
+	<insert id="addVideo" parameterType="com.tiaranail.web.domain.Video">
+		INSERT INTO
+		video
+		(video_title, video_content, video_url)
+		VALUES
+		(#{video_title},#{video_content},#{video_url})
+	</insert>
+	
+	<select id="getVideoList" resultType="com.tiaranail.web.domain.Video">
+		SELECT * FROM tiara.video Order By video_num DESC;
+	</select>
+	
+	<delete id="remove" parameterType="com.tiaranail.web.domain.Gallery" >
+	 	delete 
+	    FROM gallery
+	    WHERE gNum=#{gNum}
+	    
+	</delete>
+	<delete id="remove_video" parameterType="com.tiaranail.web.domain.Video" >
+	 	delete 
+	    FROM video
+	    WHERE video_num=#{video_num}
+	    
+	</delete>
+
+</mapper>

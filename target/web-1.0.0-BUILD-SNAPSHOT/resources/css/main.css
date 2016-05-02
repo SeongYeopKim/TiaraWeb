@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+
+*{
+	margin:0;
+	padding:0;
+}
+
+ul{
+	margin:0;
+	padding:0;
+	list-style: none;
+}
+ul li{
+	margin:0;
+	padding:0;
+}
+.wrap{
+	position:relative;
+	width: 1000px;
+	margin: 0 auto;
+}
+.wrap > .head{
+	position:relative;
+	width: 800px;
+	height: 198px;
+	border-bottom:2px solid #1a75bc;
+	margin: 0 auto; 
+	padding:30px;	
+}
+.wrap > .head > .logo{
+	position:relative;
+	width: 198px;
+	height: 198px;
+	margin: 0 auto; 	
+}
+
+
+.wrap .sideNav{
+	margin-left:-69px;
+	margin-top:-2px;
+	padding:0;
+	float:left;
+}
+
+
+.wrap .sideNav ul li{
+	width:139px;
+	height:138px;
+}
+.wrap > .content{
+	position:relative;
+	width:930px;
+	height:100%;
+	margin:0 auto;
+	float:right;
+}
+
+.graphResult{
+	width: 750px;
+	margin:50px auto;
+	height:300px;
+}
+.graphResult table{
+	float: left;
+	width:350px;
+	border: 1px solid #e0e0e0;
+}
+.graphResult table:LAST-CHILD{
+	float: left;
+	width:350px;
+	margin-left:50px;
+}
+.graphResult th{
+	text-align: left;
+	width:175px;
+	border-right:1px solid #e0e0e0;
+	border-bottom:1px solid #e0e0e0;
+	padding:5px;
+}
+.graphResult td{
+	text-align: left;
+	border-right:1px solid #e0e0e0;
+	border-bottom:1px solid #e0e0e0;
+	width:155px;
+	padding-left:5px;
+}
+
+
+

@@ -1,0 +1,96 @@
+@CHARSET "UTF-8";
+
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Nanum Gothic';
+}
+ul{
+	list-style: none;	
+}
+a:link {text-decoration: none; color:#fff;}
+a:visited {text-decoration: none;  color:#fff;}
+a:active {text-decoration: none; color:#fff;}
+a:hover {text-decoration: none;  color:#fff;}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url(/resources/images/template/bodyBg.png);
+}
+
+.headerWrap {
+	position: relative;
+	width: 880px;
+	margin: 0 auto;
+	display: table;
+}
+
+.headerWrap .headerLogo {
+	position: relative;
+	width: 880px;
+	height: auto;
+	
+}
+
+.headerWrap .headerLogo a img {
+	width: 880px;
+}
+
+.headerWrap .nav {
+	position: relative; 
+	width: 880px;
+	height: 31px;
+}
+
+.headerWrap .nav ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	width: 720px;
+	margin: 0 auto;
+	border-left: 5px solid;
+	border-right: 5px solid;
+}
+
+.headerWrap .nav ul li {
+	float: left;
+	background: #fff;
+	color: #f7d895;
+	width: 100px;
+	height: 31px;
+	border-left: 1px solid #b77a1e;
+	text-align: center;
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+.headerWrap .nav ul li:FIRST-CHILD {
+	border-left: 5px solid #b77a1e;
+}
+
+.headerWrap .nav ul li:LAST-CHILD {
+	border-right: 5px solid #b77a1e;
+}
+
+.contentWrap{
+	position:relative;
+	margin:0 auto;
+	width: 880px;
+	height: auto;
+	display: table;
+}
+.contentWrap .content{
+	padding:40px 10px;
+}
+
+
+.footer {
+	position: relative;
+	width: 880px;
+	height:200px;
+	margin:0 auto;
+	text-align: center;
+}
